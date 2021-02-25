@@ -13,8 +13,9 @@
 		<table>
 			<tr>
 				<td>
-					<label>아이디 : </label><input type="text" name="id" id="id"><button type="button" id="chckid" onclick="checkID()">아이디 중복검사</button></a>
-					<p id="id_check"></p>
+					<label>아이디 : </label><input type="text" name="id" id="id"><button type="button" id="chckid" onclick="checkID()">아이디 중복검사</button>
+					<p id="checkid"></p>
+					<p id="checka"></p>
 				</td>
 			</tr>
 			<tr>
@@ -32,7 +33,7 @@
 				<td><label>이름</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"></td>
 			</tr>
 			<tr>
-				<td><label>우편번호</label><input type="text" id="zipcode" placeholder="주소"> <input type="text" id="addr" placeholder="우편번호"> <input type="button"  value="우편번호 찾기" onclick="PostCode()"></td>
+				<td><label>우편번호</label><input type="text" id="zipcode" name="zipcode" placeholder="주소"> <input type="text" id="addr" name="addr" placeholder="우편번호"> <input type="button"  value="우편번호 찾기" onclick="PostCode()"></td>
 			</tr>
 			<tr>
 				<td><label>성별</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="gender">
@@ -56,46 +57,42 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
 		function checkID(){
-			let id = $.trim($('#id').val());
-			
-			// 아이디 null 검사
-			if(id == ''){
-	            $('#id_check').html('아이디는 필수 정보 입력입니다.').css('color', 'red');
-	            $('#checkid').focus();
-	            return false;
-			}
-			
-			// 아이디 길이 검사
-			if(id.length >= 20){
-				$('#id_check').html('아이디는 20자를 초과할 수 없습니다.').css('color','red');
-				$('#id').val('');
-			}
-			
 				let data = $('#id').serializeArray();
-				console.log(data);
 				
 				$.ajax({
 					url : "checkID.ajax",
 					type : "post",
 					data : data,
 		            dataType: "json",
-		            error : function () {
-						console.log("실패");
-					},
-					success : function (data) {
-						console.log("성공");
-						
-		                if (data.count == 0) {      //0 id미중복
-		                    resultId = 0;
-		                    $('#checkid').html('사용 가능한 아이디').css('color', 'blue');
-		                } else {                    //1 중복
-		                    resultId = 1;
-		                    $('#checkid').html('사용 불가능한 아이디').css('color', 'red');
-		                    $('#id').val('');
-		                    $('#id').focus();
-		                }
-					}
-				}); 
+				}).done(function (data) {
+					console.log(data.count);
+	                if (data.count == 0) {      //0 id미중복
+	                    $('#checka').html('사용 가능한 아이디').css('color', 'blue');
+	                } else {                    //1 중복
+	                    $('#checka').html('사용 불가능한 아이디').css('color', 'red');
+	                    $('#id').val('');
+	                    $('#id').focus();
+	                }
+				}).fail(function () {
+					alert("불편을 드려 진심으로 죄송합니다. 오류가 발생하였습니다. 빠른 처리를 위해 노력하겠습니다. ");	
+					location.href = "index.jsp";
+				});
+				
+			let id = $.trim($('#id').val());
+			
+			// 아이디 null 검사
+			if(id == ''){
+	            $('#checkid').html('아이디는 필수 정보 입력입니다.').css('color', 'red');
+	            $('#id').focus();
+	            return false;
+			}
+			
+			// 아이디 길이 검사
+			if(id.length >= 20){
+				$('#checkid').html('아이디는 20자를 초과할 수 없습니다.').css('color','red');
+				$('#id').val('');
+			}
+			
 		}
 	</script>
 	

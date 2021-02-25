@@ -11,13 +11,13 @@
 
 	<servlet>
 		<servlet-name>lion</servlet-name>
-		<servlet-class>com.primavera.www.controller.MemberController</servlet-class>
+		<servlet-class>com.primavera.www.controller.BoardController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>lion</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ajax</servlet-name>
 		<servlet-class>com.primavera.www.controller.AjaxController</servlet-class>
@@ -26,6 +26,6 @@
 		<servlet-name>ajax</servlet-name>
 		<url-pattern>*.ajax</url-pattern>
 	</servlet-mapping>
-		
-	
+
+
 </web-app>

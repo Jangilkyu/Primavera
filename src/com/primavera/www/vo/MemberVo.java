@@ -11,18 +11,21 @@ public class MemberVo {
 	private String email;
 	private String gender;
 	private String tel;
+	private String addr;
 	private Timestamp joinDate;
 	
 	public MemberVo() {
 	}
 
-	public MemberVo(String id, String name, String password, String email, String gender, String tel) {
+	public MemberVo(String id, String name, String password, String email, String gender, String tel, String addr) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.email = email;
 		this.gender = gender;
 		this.tel = tel;
+		this.addr = addr;
 	}
 
 	public int getNo() {
@@ -81,6 +84,14 @@ public class MemberVo {
 		this.tel = tel;
 	}
 
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
 	public Timestamp getJoinDate() {
 		return joinDate;
 	}
@@ -89,5 +100,4 @@ public class MemberVo {
 		this.joinDate = joinDate;
 	}
 
-	
 }//MemberVo

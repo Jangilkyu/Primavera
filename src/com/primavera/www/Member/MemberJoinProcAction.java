@@ -26,6 +26,8 @@ public class MemberJoinProcAction implements Action {
 		String passwordchk = request.getParameter("passwordchk");
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
+		String zipcode = request.getParameter("zipcode");
+		String addr = request.getParameter("addr");
 		String tel = request.getParameter("tel");
 		
 		//pwd,pwd확인 일치하는지 검사
@@ -37,21 +39,23 @@ public class MemberJoinProcAction implements Action {
 			return null;
 		}
 		
+		String address = zipcode+" "+addr;
+		
 		MemberVo membervo = new MemberVo(id,name,
-				BCrypt.hashpw(password, BCrypt.gensalt(10)),email,gender,tel);
+				BCrypt.hashpw(password, BCrypt.gensalt(10)),email,gender,address,tel);
 
 		MemberService service = new MemberService();
         if (!service.insertMember(membervo)) {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>alert('회원 가입에 실패하였습니다.');location.href='/ChungChunPrj/index.do';</script>");
+            out.println("<script>alert('회원 가입이 정상적으로 완료되지 않았습니다..');location.href='/ChungChunPrj/index.do';</script>");
             out.close();
             return null;
         }
         
         //메인페이지로 이동
         ActionForward forward = new ActionForward();
-        forward.setPath("/viws/index.do");
+        forward.setPath("/views/index.do");
         forward.setRedirect(true);
         return forward;
         
