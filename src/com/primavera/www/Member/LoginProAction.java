@@ -54,9 +54,9 @@ public class LoginProAction implements Action {
         LoginSessionListener lsl = LoginSessionListener.getInstance();
         lsl.setSession(request.getSession(), id);
       
-        //메인페이지로 이동
+        //메인페이지 이동
         ActionForward forward = new ActionForward();
-        forward.setPath("views/index.do");
+        forward.setPath("index.do");
         forward.setRedirect(true);
 		
 		return forward;

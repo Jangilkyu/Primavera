@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.sendRedirect("index.do");
-	%>
+
+<ul>
+	<li>키즈</li>
+	<li>촬영</li>
+	<li>의류</li>
+</ul>
+
 </body>
-</html>	
+</html>

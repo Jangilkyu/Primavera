@@ -26,9 +26,12 @@ public class MemberJoinProcAction implements Action {
 		String passwordchk = request.getParameter("passwordchk");
 		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
-		String zipcode = request.getParameter("zipcode");
-		String addr = request.getParameter("addr");
-		String tel = request.getParameter("tel");
+		String post1 = request.getParameter("post1");
+		String post2 = request.getParameter("post2");
+		String post3 = request.getParameter("post3");
+		String tel1 = request.getParameter("tel1");
+		String tel2 = request.getParameter("tel2");
+		String tel3 = request.getParameter("tel3");
 		
 		//pwd,pwd확인 일치하는지 검사
 		if (!password.equals(passwordchk)) {
@@ -39,10 +42,9 @@ public class MemberJoinProcAction implements Action {
 			return null;
 		}
 		
-		String address = zipcode+" "+addr;
-		
+		//회원가입 필요한 정보 Vo
 		MemberVo membervo = new MemberVo(id,name,
-				BCrypt.hashpw(password, BCrypt.gensalt(10)),email,gender,address,tel);
+				BCrypt.hashpw(password, BCrypt.gensalt(10)),email,gender,post1,post2,post3,tel1,tel2,tel3);
 
 		MemberService service = new MemberService();
         if (!service.insertMember(membervo)) {
@@ -55,7 +57,7 @@ public class MemberJoinProcAction implements Action {
         
         //메인페이지로 이동
         ActionForward forward = new ActionForward();
-        forward.setPath("/views/index.do");
+        forward.setPath("index.do");
         forward.setRedirect(true);
         return forward;
         

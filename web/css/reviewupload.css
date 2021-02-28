@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+img {
+    width: 300px;
+    border: 1px solid black;
+}
+.reviewPost-wrapper {
+    margin: 150px auto 70px;
+    width: 600px;
+    padding: 0 16px;
+}
+
+#prodcontent {
+    resize: none;
+}

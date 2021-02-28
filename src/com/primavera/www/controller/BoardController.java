@@ -13,10 +13,15 @@ import com.primavera.www.Member.JoinAction;
 import com.primavera.www.Member.LoginProAction;
 import com.primavera.www.Member.LogoutAction;
 import com.primavera.www.Member.MemberJoinProcAction;
+import com.primavera.www.Member.MyPageAction;
+import com.primavera.www.Member.myPagePro;
 import com.primavera.www.action.HomeAction;
 import com.primavera.www.common.Action;
 import com.primavera.www.common.ActionForward;
-import com.primavera.www.picture.PictureAction;
+import com.primavera.www.review.ReviewDetailAction;
+import com.primavera.www.review.ReviewListAction;
+import com.primavera.www.review.ReviewUploadAction;
+import com.primavera.www.review.ReviewUploadProAction;
 
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,13 +33,19 @@ public class BoardController extends HttpServlet {
     	
     	map = new HashMap<String, Action>();
     	
+    	map.put("index.do", new HomeAction());
     	map.put("join.do",  new JoinAction());
     	map.put("joinProc.do", new MemberJoinProcAction());
-    	map.put("index.do", new HomeAction());
     	map.put("loginProc.do", new LoginProAction());
     	map.put("logout.do", new LogoutAction());
-		map.put("pictureBoard.do", new PictureAction());
-
+    	map.put("myPage.do", new MyPageAction());
+    	map.put("myPageProc.do", new myPagePro());
+		map.put("reviewList.do", new ReviewListAction());
+		map.put("reviewupload.do", new ReviewUploadAction());
+		map.put("reviewUploadPro.do", new ReviewUploadProAction());
+		map.put("reviewDetail.do", new ReviewDetailAction());
+		
+		
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

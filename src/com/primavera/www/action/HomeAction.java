@@ -12,7 +12,7 @@ public class HomeAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/index.jsp");
+		forward.setPath("index.jsp");
 		return forward;
 	}
 }//HomeAction

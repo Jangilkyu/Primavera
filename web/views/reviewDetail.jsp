@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.sendRedirect("index.do");
-	%>
+
+	<c:forEach var="r" items="${list }" >
+		${r.r_no }
+		${r.id }
+	</c:forEach>
+
 </body>
-</html>	
+</html>

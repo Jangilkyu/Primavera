@@ -11,7 +11,7 @@ public class JoinAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         ActionForward forward = new ActionForward();
-        forward.setPath("/views/join.jsp");
+        forward.setPath("join.jsp");
 
 		return forward;
 	}

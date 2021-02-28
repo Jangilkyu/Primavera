@@ -6,6 +6,7 @@ import static com.primavera.www.common.JdbcUtil.getConnection;
 import static com.primavera.www.common.JdbcUtil.rollback;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import com.primavera.www.dao.MemberDAO;
 import com.primavera.www.vo.MemberVo;
@@ -17,13 +18,15 @@ public class MemberService {
      * @return
      */
     public boolean insertMember(MemberVo memberVo) {
-        MemberDAO dao = MemberDAO.getInstance();
-        Connection conn = getConnection();
-        dao.setConnection(conn);
+    	MemberDAO dao = MemberDAO.getInstance();	
+    	Connection conn = getConnection();
+    	dao.setConnection(conn);
         boolean isSucess = false;
         
         int result = dao.insertMember(memberVo); //dao호출
+        
         if (result == 1) {
+        	System.out.println("ta");
             commit(conn);
             isSucess = true;
         } else {
@@ -50,6 +53,11 @@ public class MemberService {
     	return result;
     }//idCheck
 	
+    /**
+     * 유효한 아이디인지 확인하는 메소드
+     * @param id
+     * @return
+     */
     public int ValidMemberID(String id) {
     	int re = -1;
     	MemberDAO dao = MemberDAO.getInstance();
@@ -72,6 +80,38 @@ public class MemberService {
     	re = dao.getPWD(id);
     	
     	return re;
+    }//ValidMemberPWD
+    
+    public ArrayList<MemberVo> getMember(String id){
+    	ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+
+    	MemberDAO dao = MemberDAO.getInstance();
+    	Connection conn = getConnection();
+    	
+    	dao.setConnection(conn);
+    	
+    	list = dao.getMember(id);
+    	
+    	return list;
+    }//getMember
+    
+    public boolean updateMember(MemberVo memberVo) {
+    	
+    	MemberDAO dao = MemberDAO.getInstance();
+    	Connection conn = getConnection();
+    	dao.setConnection(conn);
+
+    	boolean isSucess = false;
+    	
+    	int re = dao.updateMember(memberVo);
+    	
+    	if(re == 1) {
+    		commit(conn);
+    		isSucess = true;
+    	}else {
+            rollback(conn);
+    	}
+    	return isSucess;
     }
 	
 }//class

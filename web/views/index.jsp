@@ -45,7 +45,7 @@
   
   	<div style="margin: 0 auto; width: 1420px">
 	  	<div class="nav-container">
-		       <p class="menu-logo"><a href="http://localhost:8080/ChungChunPrj/index.do">Primavera</a></p>
+		       <p class="menu-logo"><a href="http://localhost:8080/ChungChunPrj//index.do">Primavera</a></p>
 		       <span style="flex-grow: 10"></span>
 		        <% if(id == null) {%>
 		       <span class="menu-item"><a type="button" id="login">로그인</a></span>
@@ -101,7 +101,7 @@
 		
 		<!-- li  -->
 		<ul>
-			<li><a href="pictureBoard.do">사진게시판</a></li>
+			<li><a href="reviewList.do">후기 게시판</a></li>
 			
 		</ul>		
 		

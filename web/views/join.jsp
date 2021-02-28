@@ -33,21 +33,32 @@
 				<td><label>이름</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"></td>
 			</tr>
 			<tr>
-				<td><label>우편번호</label><input type="text" id="zipcode" name="zipcode" placeholder="주소"> <input type="text" id="addr" name="addr" placeholder="우편번호"> <input type="button"  value="우편번호 찾기" onclick="PostCode()"></td>
+				<td><label>우편번호</label>
+				<input type="text" id="post1" name="post1" placeholder="주소">
+				<input type="text" id="post2" name="post2" placeholder="우편번호"> 
+				<input type="text" id="post3" name="post3">
+				<input type="button"  value="우편번호 찾기" onclick="PostCode()"></td>
 			</tr>
 			<tr>
-				<td><label>성별</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="gender">
+				<td><label>성별</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<select name="gender">
 								<option>선택</option>
 								<option>남자</option>
 								<option>여자</option>
 								<option>선택안함</option>
-								</select>
+							</select>
 				</td>
 			</tr>
 			<tr>
 			<td>
 			아임포트 api 사용<br>
-			전화번호: <input name="tel" ></td>
+			전화번호: <select name="tel1" id="tel1">
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+					</select>-
+					<input type="text" name="tel2" id="tel2">-
+					<input type="text" name="tel3" id="tel3">
 			</tr>
 		</table>
 			<button type="submit">버튼</button>
@@ -112,8 +123,8 @@
 		        		//지번 주소 클릭했을 경우
 		        		addr = data.jibunAddress;
 		        	}
-					document.getElementById("zipcode").value = data.zonecode;
-					document.getElementById("addr").value = addr;
+					document.getElementById("post1").value = data.zonecode;
+					document.getElementById("post2").value = addr;
 		        }
 		    }).open();
 		});

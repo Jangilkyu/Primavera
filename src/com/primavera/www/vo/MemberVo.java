@@ -10,22 +10,60 @@ public class MemberVo {
 	private String password;
 	private String email;
 	private String gender;
-	private String tel;
-	private String addr;
+	private String post1;
+	private String post2;
+	private String post3;
+	private String tel1;
+	private String tel2;
+	private String tel3;
 	private Timestamp joinDate;
 	
 	public MemberVo() {
 	}
 
-	public MemberVo(String id, String name, String password, String email, String gender, String tel, String addr) {
-		super();
+	public MemberVo(int no, String id, String name, String password, String email, String gender, String post1,
+			String post2, String post3, String tel1, String tel2, String tel3, Timestamp joinDate) {
+		this.no = no;
 		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.email = email;
 		this.gender = gender;
-		this.tel = tel;
-		this.addr = addr;
+		this.post1 = post1;
+		this.post2 = post2;
+		this.post3 = post3;
+		this.tel1 = tel1;
+		this.tel2 = tel2;
+		this.tel3 = tel3;
+		this.joinDate = joinDate;
+	}
+	
+	public MemberVo(String id, String name, String password, String email, String gender, String post1, String post2,
+			String post3, String tel1, String tel2, String tel3) {
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.email = email;
+		this.gender = gender;
+		this.post1 = post1;
+		this.post2 = post2;
+		this.post3 = post3;
+		this.tel1 = tel1;
+		this.tel2 = tel2;
+		this.tel3 = tel3;
+	}
+
+	public MemberVo(String id, String name, String email, String post1, String post2, String post3, String tel1,
+			String tel2, String tel3) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.post1 = post1;
+		this.post2 = post2;
+		this.post3 = post3;
+		this.tel1 = tel1;
+		this.tel2 = tel2;
+		this.tel3 = tel3;
 	}
 
 	public int getNo() {
@@ -76,20 +114,52 @@ public class MemberVo {
 		this.gender = gender;
 	}
 
-	public String getTel() {
-		return tel;
+	public String getTel1() {
+		return tel1;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setTel1(String tel1) {
+		this.tel1 = tel1;
 	}
 
-	public String getAddr() {
-		return addr;
+	public String getTel2() {
+		return tel2;
 	}
 
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setTel2(String tel2) {
+		this.tel2 = tel2;
+	}
+
+	public String getTel3() {
+		return tel3;
+	}
+
+	public void setTel3(String tel3) {
+		this.tel3 = tel3;
+	}
+
+	public String getPost1() {
+		return post1;
+	}
+
+	public void setPost1(String post1) {
+		this.post1 = post1;
+	}
+
+	public String getPost2() {
+		return post2;
+	}
+
+	public void setPost2(String post2) {
+		this.post2 = post2;
+	}
+
+	public String getPost3() {
+		return post3;
+	}
+
+	public void setPost3(String post3) {
+		this.post3 = post3;
 	}
 
 	public Timestamp getJoinDate() {

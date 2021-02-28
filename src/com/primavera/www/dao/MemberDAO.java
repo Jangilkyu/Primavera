@@ -5,6 +5,7 @@ import static com.primavera.www.common.JdbcUtil.close;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.primavera.www.vo.MemberVo;
 public class MemberDAO {
@@ -32,22 +33,24 @@ public class MemberDAO {
 		int re = -1;
 		
 		try {
-			pstmt = conn.prepareStatement("INSERT INTO member (no,id,name,password,email,gender,addr,tel,join_date) VALUES (seq_member.nextval,?,?,?,?,?,?,?,SYSDATE)");
+			pstmt = conn.prepareStatement("INSERT INTO member (no,id,name,password,email,gender,post1,post2,post3,tel1,tel2,tel3,join_date) VALUES (seq_member.nextval,?,?,?,?,?,?,?,?,?,?,?,SYSDATE)");
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getName());	
 			pstmt.setString(3, member.getPassword());
 			pstmt.setString(4, member.getEmail());
 			pstmt.setString(5, member.getGender());
-			pstmt.setString(6, member.getAddr());
-			pstmt.setString(7, member.getTel());
+			pstmt.setString(6, member.getPost1());
+			pstmt.setString(7, member.getPost2());
+			pstmt.setString(8, member.getPost3());
+			pstmt.setString(9, member.getTel1());
+			pstmt.setString(10, member.getTel2());
+			pstmt.setString(11, member.getTel3());
 			
 			re = pstmt.executeUpdate();
 			
 		}catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			close(pstmt);
-		}//end finally
+		}
 		return re;
 	}//insertMember
 	
@@ -126,9 +129,83 @@ public class MemberDAO {
 			
 		}catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
 		}
 		
 		return pwd;
+	}//getPWD
+	
+	public ArrayList<MemberVo> getMember(String id){
+		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			
+			pstmt = conn.prepareStatement("SELECT id, name,email, post1, post2 , post3, tel1, tel2, tel3 FROM member WHERE id = ? ");
+
+			pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) {
+				MemberVo mVo = new MemberVo();
+				
+				mVo.setId(rs.getString(1));
+				mVo.setName(rs.getString(2));
+				mVo.setEmail(rs.getString(3));
+				mVo.setPost1(rs.getString(4));
+				mVo.setPost2(rs.getString(5));
+				mVo.setPost3(rs.getString(6));
+				mVo.setTel1(rs.getString(7));
+				mVo.setTel2(rs.getString(8));
+				mVo.setTel3(rs.getString(9));
+				
+				list.add(mVo);
+			}//end if
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}//getMember
+	
+	
+	public int updateMember(MemberVo memberVo) {
+		
+		PreparedStatement pstmt = null;
+		int re = -1;
+		
+		try {
+		
+			pstmt = conn.prepareStatement("UPDATE MEMBER SET name = ?, email = ?, tel1 = ?, tel2 = ?, tel3 = ?, post1 = ?, post2 = ?, post3 = ? WHERE id = ? ");
+			
+			pstmt.setString(1, memberVo.getName());
+			pstmt.setString(2, memberVo.getEmail());
+			pstmt.setString(3, memberVo.getTel1());
+			pstmt.setString(4, memberVo.getTel2());
+			pstmt.setString(5, memberVo.getTel3());
+			pstmt.setString(6, memberVo.getPost1());
+			pstmt.setString(7, memberVo.getPost2());
+			pstmt.setString(8, memberVo.getPost3());
+			pstmt.setString(9, memberVo.getId());
+			
+			re = pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}finally {
+			close(pstmt);
+		}
+		return re;
 	}
+	
+	
+	
 
 }//class
