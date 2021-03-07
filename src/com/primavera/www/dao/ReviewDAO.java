@@ -140,7 +140,6 @@ public class ReviewDAO {
     			rVo.setWriteDate(rs.getTimestamp(5));
     			rVo.setFname(rs.getString(6));
     			rVo.setId(rs.getString(7));
-
     			
     			list.add(rVo);
     		}//end if

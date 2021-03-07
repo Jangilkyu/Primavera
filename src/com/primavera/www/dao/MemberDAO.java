@@ -196,6 +196,8 @@ public class MemberDAO {
 			
 			re = pstmt.executeUpdate();
 			
+			System.out.println("업데이트되냐 ? " + re);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());

@@ -78,6 +78,7 @@ public class LoginSessionListener implements HttpSessionBindingListener {
     	return (String)loginUser.get(session);
     }//getUserID
     
+    
     public void setSession(HttpSession session, String id) {
     	
     	//로그인에 this 즉 자기 자신을 집어 넣는다.

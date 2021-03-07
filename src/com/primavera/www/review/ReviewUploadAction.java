@@ -32,7 +32,4 @@ public class ReviewUploadAction implements Action{
 		
 		return forward;
 	}
-
-	
-	
 }

@@ -38,7 +38,7 @@ public class LoginProAction implements Action {
 		if(service.ValidMemberID(id) != VALID) {
 	        response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>alert('유효하지 않는 아이디입니다.'); location.href='/ChungChunPrj/index.do'; </script>");
+            out.println("<script>alert('유효하지 않는 아이디입니다.'); location.href='/ChungChunPrj/views/index.do'; </script>");
             out.close();
             return null;
 		}
@@ -57,7 +57,6 @@ public class LoginProAction implements Action {
         //메인페이지 이동
         ActionForward forward = new ActionForward();
         forward.setPath("index.do");
-        forward.setRedirect(true);
 		
 		return forward;
 	}

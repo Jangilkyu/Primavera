@@ -29,8 +29,6 @@ public class myPagePro implements Action{
 		String post2 = request.getParameter("post2");
 		String post3 = request.getParameter("post3");
 		
-		System.out.println(tel3);
-		
 		MemberService service = new MemberService();
 		
 		/*
@@ -58,6 +56,7 @@ public class myPagePro implements Action{
 		MemberVo memberVo = new MemberVo(id,name,email,post1,post2,post3,tel1,tel2,tel3);
 		boolean re = service.updateMember(memberVo);
 		System.out.println(re);
+		
 		/*
 		 * if(!service.updateMember(memberVo)) {
 		 * response.setContentType("text/html;charset=UTF-8"); PrintWriter out =

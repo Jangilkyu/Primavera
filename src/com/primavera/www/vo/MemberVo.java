@@ -17,6 +17,7 @@ public class MemberVo {
 	private String tel2;
 	private String tel3;
 	private Timestamp joinDate;
+	private String manager;
 	
 	public MemberVo() {
 	}
@@ -168,6 +169,14 @@ public class MemberVo {
 
 	public void setJoinDate(Timestamp joinDate) {
 		this.joinDate = joinDate;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
 	}
 
 }//MemberVo

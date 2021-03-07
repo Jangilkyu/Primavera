@@ -21,7 +21,6 @@
   </head>
   
   <body>
-   
   	     <div class="black-background">  
 	        <div class="white-backgrounds">
 				<form action="loginProc.do" method="post">
@@ -45,7 +44,7 @@
   
   	<div style="margin: 0 auto; width: 1420px">
 	  	<div class="nav-container">
-		       <p class="menu-logo"><a href="http://localhost:8080/ChungChunPrj//index.do">Primavera</a></p>
+		       <p class="menu-logo"><a href="http://localhost:8080/ChungChunPrj/views/index.do">Primavera</a></p>
 		       <span style="flex-grow: 10"></span>
 		        <% if(id == null) {%>
 		       <span class="menu-item"><a type="button" id="login">로그인</a></span>
@@ -60,50 +59,54 @@
 	   </div>
 
 		<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-		  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-		  </ol>
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
-		      <img src="http://localhost:8080/ChungChunPrj/img/img1.jpg"  class="d-block w-100 slide-img" alt="왜..">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>First slide label</h5>
-		        <p>Some representative placeholder content for the first slide.</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="http://localhost:8080/ChungChunPrj/img/img2.jpg"  class="d-block w-100 slide-img" alt="...">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>Second slide label</h5>
-		        <p>Some representative placeholder content for the second slide.</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="http://localhost:8080/ChungChunPrj/img/img3.jpg" class="d-block w-100 slide-img" alt="...">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>3번째 라벨</h5>
-		        <p>쇼핑몰</p>
-		      </div>
-		    </div>
-		  </div>
-		  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
-		</div>
+			  <ol class="carousel-indicators">
+			    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+			    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+			    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+			  </ol>
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img src="http://localhost:8080/ChungChunPrj/img/img1.jpg"  class="d-block w-100 slide-img" alt="왜..">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>First slide label</h5>
+			        <p>Some representative placeholder content for the first slide.</p>
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="http://localhost:8080/ChungChunPrj/img/img2.jpg"  class="d-block w-100 slide-img" alt="...">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>Second slide label</h5>
+			        <p>Some representative placeholder content for the second slide.</p>
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="http://localhost:8080/ChungChunPrj/img/img3.jpg" class="d-block w-100 slide-img" alt="...">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>3번째 라벨</h5>
+			        <p>쇼핑몰</p>
+			      </div>
+			    </div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <a class="nav-link" href="productList.do">상품보기</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link active" href="reviewList.do">후기 게시판</a>
+			  </li>
+			</ul>
 		</div>
 		
-		<!-- li  -->
-		<ul>
-			<li><a href="reviewList.do">후기 게시판</a></li>
-			
-		</ul>		
 		
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

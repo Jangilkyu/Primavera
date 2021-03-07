@@ -26,7 +26,6 @@ public class MemberService {
         int result = dao.insertMember(memberVo); //dao호출
         
         if (result == 1) {
-        	System.out.println("ta");
             commit(conn);
             isSucess = true;
         } else {

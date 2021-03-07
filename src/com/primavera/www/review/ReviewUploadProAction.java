@@ -28,7 +28,7 @@ public class ReviewUploadProAction implements Action {
 		if (id == null) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('로그인 후 후기 작성이 가능합니다.!'); location.href='/ChungChunPrj/index.do'; </script>");
+			out.println("<script>alert('로그인 후 후기 작성이 가능합니다.!'); location.href='/ChungChunPrj/views/index.do'; </script>");
 			out.close();
 			return null;
 		}

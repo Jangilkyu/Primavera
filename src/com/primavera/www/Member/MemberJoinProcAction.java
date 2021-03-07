@@ -37,7 +37,7 @@ public class MemberJoinProcAction implements Action {
 		if (!password.equals(passwordchk)) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('두 비밀번호가 일치하지 않습니다.');location.href='/ChungChunPrj/index.do';</script>");
+			out.println("<script>alert('두 비밀번호가 일치하지 않습니다.');location.href='/ChungChunPrj/views/index.do';</script>");
 			out.close();
 			return null;
 		}
@@ -50,7 +50,7 @@ public class MemberJoinProcAction implements Action {
         if (!service.insertMember(membervo)) {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("<script>alert('회원 가입이 정상적으로 완료되지 않았습니다..');location.href='/ChungChunPrj/index.do';</script>");
+            out.println("<script>alert('회원 가입이 정상적으로 완료되지 않았습니다..');location.href='/ChungChunPrj/views/index.do';</script>");
             out.close();
             return null;
         }

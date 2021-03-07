@@ -8,30 +8,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:8080/ChungChunPrj/css/review.css">
 </head>
 <body>
-
-
-		<div class ="wrap">
-			<c:forEach var="r" items="${list }">
-				<div>
-				    <div class="row">
-		     			 <div class="col s1">
-		     			 	<a href="reviewDetail.do?r_no=${r.r_no }"><img src="../upload/${r.fname }" width="200" height="200">
-		     			 	${r.title }
-		     			 	</a>
-		     			 </div>
-		   			 </div>
+			<div id="best">
+				<div class="best-title">
+					<h2>리뷰 게시판</h2>
 				</div>
-<%-- 			
-						<td>${r.r_no}</td>
-						<td>${r.content }</td>
-						<td>${r.star }</td>
-						<td>${r.writeDate }</td>
-						<td><img src="../upload/${r.fname }" width="200" height="200"></td>
-						<td>${r.id }</td> --%>
+				<div class="best-wrap">
+			<c:set var="a" value="0"></c:set>
+			<div class="bestline first">
+			<c:forEach var="r" items="${list }">
+				<c:set var="a" value="${a+1 }"/>
+				<c:if test="${a >= 4 }">
+				<c:set var="a" value="0"/>
+				</c:if>				
+				<ul class="items">
+					<li class="best-item-image"><a href="reviewDetail.do?r_no=${r.r_no }"><img src="../upload/${r.fname }" width="200" height="200"></a></li>
+					<li class="title"><a href="reviewDetail.do?r_no=${r.r_no }" class="a">${r.title }</a></li>
+				</ul>
 			</c:forEach>
+					</div>
+				</div>
 			</div>
-		<a href="reviewupload.do">글올리기</a>
 </body>
 </html>
