@@ -3,10 +3,15 @@
 - 마이페이지 기능
     - 내 정보 변경
     - 내가 작성한 글 확인
+        - 작성글 리스트 확인
+        - 디테일 페이지
+        - 글 수정 및 삭제
     - 상품 올리기
     - 리뷰 올리기
 
-## **web(mypage)**
+<hr>
+
+## **Web(mypage)**
 <img src ="https://user-images.githubusercontent.com/69107255/111992240-87672980-8b58-11eb-8ab3-1d05706ee6eb.png">
 
 # **회원정보 변경**
@@ -87,6 +92,27 @@
 ```
 <img src ="https://user-images.githubusercontent.com/69107255/111998468-5d653580-8b5f-11eb-9675-eab78483071e.png">
 
+## 상품 수정
+
+## **Action(ProductUpdateAction.java)**
+
+- 사용자가 `글 수정`을 클릭 시 ProductUpdateAction로 가서 특정 한 상품에 대한 상품번호를 가지고 상품 정보를 DB에서 가져온다.
+
+<img src ="https://user-images.githubusercontent.com/69107255/112098858-d60ed500-8be5-11eb-8f5f-fd1fee006125.png">
+
+- 상태 유지 후 productUpdate.jsp로 이동한다.
+
+<img src ="https://user-images.githubusercontent.com/69107255/112098722-9c3dce80-8be5-11eb-9239-89ed546ffe4e.png">
+
+- 클릭 시 상품번호에 대한 값들이 상태유지한 list에 값으로 세팅되고 `SUBMIT`버튼 클릭 시 ProductUpdateProAction.java
+
+<img src ="https://user-images.githubusercontent.com/69107255/112097542-8d561c80-8be3-11eb-98f2-6783263e5646.png">
+
+
+## 상품 삭제
+
+
+
 # **상품 올리기**
 
 ## **Action(ProductProAction.java)**
@@ -118,7 +144,7 @@
 
 사용자가 글을 작성 후 **SUBMIT**버튼을 클릭 Controller에서 `reviewUploadPro.do`매핑을 해서 ReviewUploadProAction.java로 이동해 아래 코드를 실행한다.
 
-    vo 저장 시 
+    VO 저장 시 
 	reviewVo.setM_no(service.getMemberNo(id));에는 고객에 회원번호를 저장한다.
 
 <img src ="https://user-images.githubusercontent.com/69107255/112090950-cd170700-8bd7-11eb-91d2-d2b940cff7f3.png">

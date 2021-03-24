@@ -1,7 +1,7 @@
-`Action interface`와 `ActionForward class`를 생성 후
- Action interface의 자손 클래스인 ???Action.java를 생성 하고, 각각의 Action 객체마다 path를 저장시켜 보내줄 수 있다.
+## 👉 **[Action]클래스**
 
-## [Action]클래스
+`Action interface`와 `ActionForward class`를 생성 후
+ Action interface의 자손 클래스인 xxxxAction.java를 생성 하고, 각각의 Action 객체마다 path를 저장시켜 보내줄 수 있다.
 
 ```java
 public interface Action {
@@ -9,7 +9,7 @@ public interface Action {
 }
 ```
 
-## [ActionForward]클래스
+## 👉 **[ActionForward]**
 
 ActionForward 클래스는 페이지 이동 처리를 하는 클래스 이다.
 
@@ -51,7 +51,7 @@ public class ActionForward {
 }
 ```
 
-## **web.xml**
+## 👉**web.xml**
 `com.primavera.www.controller.BoardController 클래스`를 
 `*.do`매핑 방식으로 설정하였다.
 
@@ -60,7 +60,7 @@ public class ActionForward {
 <img src="https://user-images.githubusercontent.com/69107255/111912831-c2148780-8aae-11eb-89b6-ade5438f79fc.png">
 
 
-## Controller
+## 👉**Controller**
 
 `web.xml`에 등록했 던 BoardController클래스를 생성하였다.
 ```java
