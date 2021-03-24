@@ -12,3 +12,90 @@
 
 
 1. session을 이용한 로그인 및 회원가입
+
+## 🗃️ 디렉토리 구조
+
+```shell
+📁 src
+├── 📁com.primavera.www.action
+│   ├── 📄HomeAction.java
+├── 📁com.primavera.www.board
+│   ├── 📄ProductAction.java
+│   ├── 📄ProductDeleteAction.java
+│   ├── 📄ProductListAction.java
+│   ├── 📄ProductListProAction.java
+│   ├── 📄ProductProAction.java
+│   ├── 📄ProductUpdateAction.java
+│   ├── 📄ProductUpdateProAction.java
+├── 📁com.primavera.www.common
+│   ├── 📄Action.java
+│   ├── 📄ActionForward.java
+│   ├── 📄JdbcUtil.java
+│   ├── 📄LoginSessionListener.java
+│   ├── 📄JdbcUtil.java
+├── 📁com.primavera.www.dao
+│   ├── 📄AjaxCheckIdAction.java
+│   ├── 📄JoinAction.java
+│   ├── 📄LoginProAction.java
+│   ├── 📄LogoutAction.java
+│   ├── 📄MemberInfoAction.java
+│   ├── 📄MemberInfoProcAction.java
+│   ├── 📄MemberJoinProcAction.java
+│   ├── 📄MemberWriteAction.java
+│   ├── 📄MyDetailWriteAction.java
+│   ├── 📄myPagePro.java
+├── 📁com.primavera.www.review
+│   ├── 📄ReviewDetailAction.java
+│   ├── 📄ReviewListAction.java
+│   ├── 📄ReviewUploadAction.java
+│   ├── 📄ReviewUploadProAction.java
+├── 📁com.primavera.www.service
+│   ├── 📄MemberService.java
+│   ├── 📄ProductService.java
+│   ├── 📄ReviewService.java
+├── 📁com.primavera.www.MemberVo
+│   ├── 📄MemberVo.java
+│   ├── 📄ProductVo.java
+│   ├── 📄ReviewVo.java
+│
+📁web
+├── 📁ajax
+│   ├── 📄AjaxCheckJoin.jsp
+│   ├── 📁board
+├── 📁css
+│   ├── 📄AjaxCheckJoin.jsp
+│   ├── 📄reivew.css
+│   ├── 📄reviewupload.css
+│   ├── 📄style.css
+│   ├── 📄write.css
+├── 📁img
+│   ├── 📄img1.jpg
+│   ├── 📄img2.jpg
+│   ├── 📄img3.jpg
+├── 📁META-INF
+└── 📁views
+│   ├── 📁goods
+│   ├── 📁upload
+│   ├── 📄index.jsp
+│   ├── 📄join.jsp
+│   ├── 📄memberInfoUpdate.jsp
+│   ├── 📄myDetailWrite.jsp
+│   ├── 📄myPage.jsp
+│   ├── 📄productDetailList.jsp
+│   ├── 📄productList.jsp
+│   ├── 📄productUpdate.jsp
+│   ├── 📄productWrite.jsp
+│   ├── 📄reviewDetail.jsp
+│   ├── 📄reviewList.jsp
+│   ├── 📄reviewDetail.jsp
+│   ├── 📄reviewupload.jsp
+│   ├── 📄start.jsp
+│
+📁WEB-INF
+├── 📁lib
+│   ├── 💊activation.jar
+│   ├── 💊cos.jar
+│   ├── 💊jstl.jar
+│   ├── 💊ojdbc8.jar
+├── 📄web.xml
+```
