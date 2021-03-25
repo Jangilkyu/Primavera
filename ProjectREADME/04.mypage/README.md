@@ -1,6 +1,6 @@
-# **mypage**
+# **👉mypage**
 
-- 마이페이지 기능
+- 💥마이페이지 기능
     - 내 정보 변경
     - 내가 작성한 글 확인
         - 작성글 리스트 확인
@@ -11,17 +11,17 @@
 
 <hr>
 
-## **Web(mypage)**
+## **◻Web(mypage)**
 <img src ="https://user-images.githubusercontent.com/69107255/111992240-87672980-8b58-11eb-8ab3-1d05706ee6eb.png">
 
-# **회원정보 변경**
+# **👉회원정보 변경**
 
-## **web**
+## **◻web**
 
 - 회원 정보 화면
 - css프레임워크는 materializecss을 적용해보았다.
 
-## **MemberInfoAction**
+## **◻MemberInfoAction**
 
 - 일단 마이페이지에 경우 로그인이 안되어 있을 경우 이용 할 수 없다. 따라서 id session이 null아닌 회원만 들어올 수 있다.
 
@@ -29,11 +29,11 @@
 
 <img src ="https://user-images.githubusercontent.com/69107255/111995096-e4181380-8b5b-11eb-9ac1-05c02fb9b883.png">
 
-## **Service(MemberService.java)**
+## **◻Service(MemberService.java)**
 
 <img src ="https://user-images.githubusercontent.com/69107255/111993290-c8ac0900-8b59-11eb-9a91-798b44540547.png">
 
-## **DAO**
+## **◻DAO**
 
 - DAO를 통해 회원 아이디에 대한 모든 값을 리스트에 담았다.
 
@@ -49,26 +49,26 @@
 <img src ="https://user-images.githubusercontent.com/69107255/111992135-6acaf180-8b58-11eb-9ce9-3c8f6f9500b8.png">
 
 
-# **내가 작성한 글 확인**
+# **👉내가 작성한 글 확인**
 
 ## Action(MemberWriteAction.java)
 
 <img src ="https://user-images.githubusercontent.com/69107255/112021950-2863dd80-8b75-11eb-9659-7b826f7f8a9e.png">
 
-## **Service**
+## **◻Service**
 * mywrite.jsp에 내가 등록 상품에 정보들을 가져오는 메소드
 
 <img src ="https://user-images.githubusercontent.com/69107255/112023252-6ca3ad80-8b76-11eb-91bb-f7e6eeca634c.png">
 
 
-## **DAO**
+## **◻DAO**
 
 - member테이블에 회원번호와 상품에 회원번호를 참조하고 있는 products.m_no에 값이 같은 것에 상품 정보를 조회하고 그 값을 list를 통해 리턴 하고 있다.
 
 
 <img src="https://user-images.githubusercontent.com/69107255/112023501-aaa0d180-8b76-11eb-87b7-34fbfe3d5f6e.png">
 
-## **상태유지**
+## **◻상태유지**
 
 * 조회해온 회원이 작성한 글에 대한 list를 상태 유지 후 myWrite로 이동한다.
 
@@ -77,13 +77,13 @@
 	forward.setPath("myWrite.jsp");
 ```
 
-**myWrite**
+**💥myWrite**
 
 - 로그인한 아이디에 회원이 작성한 글에 대한 내용이 아래 이미지와 같은 내용을 myWrite.jsp에서 확인이 가능하다.
 
 <img src ="https://user-images.githubusercontent.com/69107255/111996930-db284180-8b5d-11eb-8acf-8ca3f179958c.png">
 
-**myDetailWrite**
+**💥myDetailWrite**
 
 쿼리스트링을 이용해 상품 제목을 클릭 시 상품번호에 대한 정보를 조회할 수 있다.
 
@@ -92,9 +92,10 @@
 ```
 <img src ="https://user-images.githubusercontent.com/69107255/111998468-5d653580-8b5f-11eb-9675-eab78483071e.png">
 
-## 상품 수정
+💥
+## **👉상품 수정**
 
-## **Action(ProductUpdateAction.java)**
+## **◻Action(ProductUpdateAction.java)**
 
 - 사용자가 `글 수정`을 클릭 시 ProductUpdateAction로 가서 특정 한 상품에 대한 상품번호를 가지고 상품 정보를 DB에서 가져온다.
 
