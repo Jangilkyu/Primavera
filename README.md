@@ -11,7 +11,7 @@
 <img src ="https://user-images.githubusercontent.com/69107255/111952980-4c013680-8b29-11eb-8c4f-f9635482ea2f.png">
 
 
-1. session을 이용한 로그인 및 회원가입
+<!-- 1. session을 이용한 로그인 및 회원가입 -->
 
 ## 🗃️ 디렉토리 구조
 
